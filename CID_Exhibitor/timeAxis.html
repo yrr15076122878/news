@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>时间轴</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/timeAxis.css" />
+    <link rel="stylesheet" type="text/css" href="./css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css" />
+</head>
+
+<body>
+    <div class="banner">
+        <img src="http://reg.diecastexpo.cn/upload/20180108150719.jpg" alt="">
+    </div>
+    <div class="about-main2">
+        <div class="licheng-bg">
+            <img src="./img/timeLine.png" class="quxian" />
+            <div class="warper pr">
+                <div class="licheng-content swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                        	
+                            <ul class="clearfix">
+                            	<!--循环部分-->
+                                <li>
+                                    <a class="clearfix">
+                                        <div class="lc-left">
+                                            <i class="line"></i> <span class="date">1995</span>
+                                        </div>
+                                        <!--可添加修改部分-->
+                                        <div class="lc-right">
+                                            <div class="right-text">
+                                                <h3>公司成立</h3>
+                                                <p>1995年12月14日，某某某有限公司成立。</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                	<!--循环部分-->
+                               <li>
+                               	<a href="" class="clearfix">
+                               		<div class="lc-left">
+                               			<i class="line">
+                               				<span class="date">
+                               					1995
+                               				</span>
+                               			</i>
+                               			 <!--可添加修改部分-->
+                               			<div class="lc-right">
+                               				<div class="right-text">
+                               					<h3>
+                               						公司成立
+                               					</h3>
+                               					<p>
+                               						1995年12月14日，公司成立
+                               					</p>
+                               				</div>
+                               			</div>
+                               		</div>
+                               	</a>
+                               </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--按钮-->
+                    <div class="lc-swiper-btn">
+                        <a class="btn-prev fl"><i class="iconfont">&#xe624;</i></a>
+                        <a class="btn-next fr"><i class="iconfont">&#xe626;</i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/timeAxis.js"></script>
+    <script type="text/javascript">
+    	
+        var mySwiper = new Swiper('.swiper-container.licheng-content', {
+            autoplay: false, //自动滑动
+        })
+        $('.btn-prev').click(function() {
+            mySwiper.swipePrev();
+        })
+        $('.btn-next').click(function() {
+            mySwiper.swipeNext();
+        })
+    </script>
+</body>
+
+</html>

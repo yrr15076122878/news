@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>展商预览</title>
+
+		<link rel="stylesheet" href="./layui/css/layui.css">
+		<link rel="stylesheet" href="./css/common.css">
+		<link rel="stylesheet" href="./css/exhibitorInfo.css">
+		<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>-->
+	</head>
+
+	<body>
+		<div class="banner">
+			<img src="http://reg.diecastexpo.cn/upload/20180108150719.jpg" alt="">
+		</div>
+
+		<div class="layui-container">
+
+			<div class="search layui-row">
+				<div class="category layui-col-lg4">
+					<span style="font-weight: bold">展会类别：</span>
+					<span class="choice-btn btn-bg btn-color">压铸展</span>
+					<span class="choice-btn">有色展</span>
+				</div>
+				<div class="search-bar layui-col-lg7">
+					<input type="text" autocomplete="off" placeholder="请输入您感兴趣的关键字内容" class="layui-input">
+					<button style="position: absolute;top: 0;right: 0;
+                cursor: pointer;" type="button" class="layui-btn">
+                    <i class="layui-icon layui-icon-search"
+                       style="font-size: 22px"></i>
+                </button>
+				</div>
+				<div class="language layui-col-lg1">
+					<div>
+						<img src="../img/EN.png" alt="">
+						<span>EN</span>
+					</div>
+				</div>
+			</div>
+			<div class="search-list">
+				<p><i class="layui-icon layui-icon-search"></i> 搜索结果</p>
+
+				<!-- 容器 -->
+				<div id="listCard"></div>
+
+				<!-- temp -->
+				<div id="tempCard" style="display: none"></div>
+
+				<!-- pagination -->
+				<div id="pages"></div>
+			</div>
+
+		</div>
+		<!--点击按钮-->
+		<button type="button" onclick="openModak()">开启模态框</button>
+		<button type="button" onclick="openModak()">开启模态框</button>
+		<button data-method="notice" class="layui-btn">示范一个公告层</button>
+		<!--模态框部分-->
+		<div id="motaikunag" style="display: none;overflow: hidden !important;">
+			<div class="layui-row" style="overflow: hidden;">
+				<div class="modal fade companyInfo in" style="display: block;overflow: hidden;">
+					111 
+				</div>
+			</div>
+		</div>
+		<!--弹出模态框-->
+		<style>
+			.layui-layer{
+				overflow: hidden;
+			}
+			.layui-layer-title{
+				font-size: 18px;
+				background: #FFFFFF;
+			}
+		</style>
+		<script>
+			function openModak() {
+				$("[name='testname']").val("xxxxxxxxxxxxxxx"); //向模态框中赋值
+				layui.use(['layer'], function(){
+					var layer = layui.layer,
+						$ = layui.$;
+					layer.open({
+						type: 1, //类型
+						area: ['50%', '200px'], //定义宽和高
+						title: '公司简介', //题目
+						shadeClose: true, //点击遮罩层关闭
+						content: $('#motaikunag') //打开的内容
+					});
+				})
+			}
+		</script>
+		<script src="./js/jquery.min.js"></script>
+		<script src="./layui/layui.js"></script>
+		<script src="./js/list-card.js"></script>
+		<script src="./js/exhibitorInfo.js"></script>
+		<!--<script src="js/bootstrap.min.js"></script>-->
+	</body>
+
+</html>
